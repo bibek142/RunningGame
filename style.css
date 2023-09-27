@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Roboto&family=Ubuntu&family=Varela+Round&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden;
+}
+.gameContainer{
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+.man{
+    background-image: url(man.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 150px;
+    left: 400px;
+}
+.title{
+    font-family: 'Balsamiq Sans', 'cursive';
+    position: relative;
+    top: 20px;
+    text-align: center;
+    font-size: 35px;
+}
+.gameOver{
+    font-family: 'Balsamiq Sans', 'cursive';
+    position: relative;
+    top: 70px;
+    font-size: 25px;
+    text-align: center;
+}
+.obstacle{
+    background-image: url(car.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 320px;
+    height: 115px;
+    transform: scaleX(-1);
+    position: absolute;
+    bottom: 160px;
+    left: 70vw;
+}
+.gameScore{
+    font-family: 'Balsamiq Sans', 'cursive';
+    font-size: 30px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    border: 2px solid black;
+    border-radius: 6px;
+    padding: 10px;
+}
+.animateMan{
+    animation: man 1s linear;
+}
+.obstacleAni{
+    animation: obstacle 4s linear infinite;
+}
+
+@keyframes man {
+    0%{
+      bottom: 150px;  
+    }
+    50%{
+        bottom: 350px;
+    }
+    100%{
+        bottom: 150px;
+    }
+}
+@keyframes obstacle {
+    0%{
+        left: 100vw;
+    }
+    100%{
+        left: -10vw;
+    }
+}
