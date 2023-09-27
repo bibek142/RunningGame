@@ -39,7 +39,12 @@ setInterval(() => {
         audiogo.play();
         obstacle.style.backgroundImage = "url(Scar.png)"
         obstacle.classList.remove('obstacleAni');
-    }else if(offsetX < 140 && cross){
+    }else if(score > highestScore){
+            highestScore = score;
+            localStorage.setItem('highestScore', highestScore);
+            updateHighestScore(highestScore);
+        }
+    else if(offsetX < 140 && cross){
         score += 1;
         updateScore(score);
         cross = false;
@@ -58,3 +63,12 @@ gameScore = document.querySelector('.gameScore')
 const updateScore = (score)=>{
     gameScore.innerHTML = "Your Score: " + score;
 }
+const updateHighestScore = (score) => {
+    const highestScoreElement = document.querySelector('.highestScore');
+    highestScoreElement.innerHTML = "Highest Score: " + score;
+}
+let highestScore = localStorage.getItem('highestScore') || 0;
+updateHighestScore(highestScore);
+
+
+
